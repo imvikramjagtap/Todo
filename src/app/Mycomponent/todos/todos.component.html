@@ -1,0 +1,17 @@
+<div class="mx-auto flex flex-col items-center max-w-sm sm:max-w-md min-h-screen pt-10">
+  <app-add-todo (addTodo)="addTodo($event)"></app-add-todo>
+  <h1 class="text-2xl text-teal-900 font-semibold">Your ToDo's</h1>
+  <div class="p-5 border mt-5 rounded-lg text-white flex flex-col items-center justify-center" *ngIf="this.todos.length === 0; else elseBlock">
+    <p class="">Seems Like You Are a Superhuman!</p> <p>To Have No Task Left Todo!</p>
+  </div>
+  <ng-template #elseBlock
+    ><div class="mx-3">
+      <div *ngFor="let todo of todos">
+        <app-todo-item
+          [todo]="todo"
+          (todoDelete)="deleteTodo($event)"
+          (changeActive)="changeActiveTodo($event)"
+        ></app-todo-item>
+      </div></div
+  ></ng-template>
+</div>

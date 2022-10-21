@@ -1,0 +1,28 @@
+<div
+  [ngClass]="{ 'bg-teal-700': !todo.active }"
+  class="flex transition-all text-white duration-1000 border text-start mt-2 min-w-max max-w-md p-5 rounded-lg gap-5 justify-between items-center"
+>
+<div>
+  <input
+    class="w-5 flex h-5 hover:cursor-pointer"
+    [checked]="!todo.active"
+    type="checkbox"
+    name=""
+    id=""
+    (change)="changeHandler(todo)"
+  />
+</div>
+  
+  <div class="w-full flex justify-start"
+  >
+    <p [ngClass]="{ 'line-through': !todo.active }"
+    class="text-xl flex justify-start">{{ todo.title }}</p>
+  </div>
+
+  <button
+    class="px-5 py-1 bg-red-500 rounded-md text-white"
+    (click)="onDelClick(todo)"
+  >
+    Delete
+  </button>
+</div>

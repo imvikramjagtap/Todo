@@ -1,0 +1,7 @@
+<div class="flex flex-col items-center pb-5">
+  <h3 class="text-2xl text-teal-900 font-semibold">Add ToDo</h3>
+  <form class="mt-2 flex" (ngSubmit)="onAddClick()">
+    <input type="text" name="title" maxlength="22" [(ngModel)]="title" class="invalid:border-red-500 border rounded-xl border-r-0 rounded-r-none px-3 py-1 outline-none" placeholder="e.g: Read a blog..." />
+    <button type="submit" class="border rounded-xl py-2 rounded-l-none px-4 hover:bg-teal-700 text-white">Add</button>
+  </form>
+</div>
